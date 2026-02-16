@@ -19,9 +19,6 @@ jobs:
       - name: Mirror to GitLab
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-          GITLAB_HOST: ${{ secrets.GITLAB_HOST }}
-          GITLAB_USER: ${{ secrets.GITLAB_USER }}
-          GITLAB_REPO: ${{ secrets.GITLAB_REPO }}
         run: |
-          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@${GITLAB_HOST}/${GITLAB_USER}/${GITLAB_REPO}.git
+          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@git.gerardgascon.com/Geri/mirror-test.git
           git push --mirror gitlab
