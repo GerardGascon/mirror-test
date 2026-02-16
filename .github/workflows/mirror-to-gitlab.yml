@@ -20,7 +20,5 @@ jobs:
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@git.gerardgascon.com/Geri/mirror-test.git
-          echo "aiosudhf"
-          git push --mirror gitlab
-          echo "aiosudhf"
+          git remote add gitlab https://Geri:${GITLAB_TOKEN}@git.gerardgascon.com/Geri/mirror-test.git
+          GIT_TRACE=1 GIT_CURL_VERBOSE=1 git push --mirror gitlab
